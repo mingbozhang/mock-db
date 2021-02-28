@@ -27,7 +27,7 @@ public class Database {
         // 检查输入
         Class dataType = checkInput(data);
 
-        return data.stream()
+        return data.parallelStream()
                 .filter(where.buildPredicateByDataType(dataType))
                 .sorted(orderBy.buildComparator(dataType))
                 .limit(limit.getSize())
