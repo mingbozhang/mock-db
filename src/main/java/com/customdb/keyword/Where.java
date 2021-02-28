@@ -54,14 +54,14 @@ public class Where {
 
         EnumComparisonOperator comparisonOperator;
 
-        if (comparisonStr.indexOf(LT.getSymbol()) >= 0) {
-            comparisonOperator = LT;
-        } else if (comparisonStr.indexOf(LE.getSymbol()) >= 0) {
+        if (comparisonStr.indexOf(LE.getSymbol()) >= 0) {
             comparisonOperator = LE;
-        } else if (comparisonStr.indexOf(GT.getSymbol()) >= 0) {
-            comparisonOperator = GT;
         } else if (comparisonStr.indexOf(GE.getSymbol()) >= 0) {
             comparisonOperator = GE;
+        } else if (comparisonStr.indexOf(LT.getSymbol()) >= 0) {
+            comparisonOperator = LT;
+        } else if (comparisonStr.indexOf(GT.getSymbol()) >= 0) {
+            comparisonOperator = GT;
         } else if (comparisonStr.indexOf(EQ.getSymbol()) >= 0) {
             comparisonOperator = EQ;
         } else {

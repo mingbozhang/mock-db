@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class Student {
 
-    private int sex;
+    private Integer sex;
     private String name;
     private Integer age;
     private LocalDate birthday;
