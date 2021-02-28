@@ -4,11 +4,7 @@ import com.customdb.keyword.GroupBy;
 import com.customdb.keyword.Limit;
 import com.customdb.keyword.OrderBy;
 import com.customdb.keyword.Where;
-import com.customdb.model.Student;
-import com.google.gson.Gson;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,27 +12,6 @@ import java.util.Optional;
  * @author mingbozhang
  */
 public class Database {
-
-    public static void main(String[] args) {
-
-        List<Object> students = new ArrayList<>();
-        students.add(new Student(1, "Bob", 18, LocalDate.of(2003, 1, 1)));
-        students.add(new Student(2, "Penny", 18, LocalDate.of(2003, 2, 2)));
-        students.add(new Student(1, "John", 20, LocalDate.of(2001, 1, 1)));
-        students.add(new Student(2, "Cassie", 23, LocalDate.of(1999, 1, 1)));
-        students.add(new Student(2, "Cassie", 1, LocalDate.of(1999, 1, 1)));
-
-//        Where where = Where.builder().criteriaString(" age=18").build();
-        Where where = Where.builder().build();
-        OrderBy orderBy = OrderBy.builder().orderString("name asc,age desc").build();
-//        GroupBy groupBy = new GroupBy("age,sex");
-        GroupBy groupBy = GroupBy.builder().build();
-        Limit limit = Limit.builder().size(Long.MAX_VALUE).build();
-
-        Database database = new Database();
-        Object result = database.query(students, where, orderBy, groupBy, limit);
-        System.out.printf(new Gson().toJson(result));
-    }
 
     /**
      * 查询

@@ -27,8 +27,10 @@ public class GroupBy {
 
         Collector groupingByCollector = null;
         String[] fieldNames = groupString.split(",");
+        int length = fieldNames.length;
 
-        for (String fieldName : fieldNames) {
+        for (int i = length - 1; i >= 0; i--) {
+            String fieldName = fieldNames[i];
             Field field = ReflectionUtil.getDeclaredField(dataType, fieldName);
 
             if (groupingByCollector == null) {
